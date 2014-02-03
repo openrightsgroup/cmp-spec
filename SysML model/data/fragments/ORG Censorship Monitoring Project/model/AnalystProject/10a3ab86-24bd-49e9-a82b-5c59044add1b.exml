@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ORG Censorship Monitoring Project" version="3">
+  <DEPS>
+    <ID name="ORG Censorship Monitoring Project" mc="AnalystProject" uid="10a3ab86-24bd-49e9-a82b-5c59044add1b"/>
+    <COMPID name="ORG Censorship Monitoring Project" mc="PropertyContainer" uid="06e8442f-fbe2-4066-9bd3-89de244e20d5"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="ORG Censorship Monitoring Project" mc="AnalystProject" uid="10a3ab86-24bd-49e9-a82b-5c59044add1b"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[ORG Censorship Monitoring Project]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="PropertyRoot">
+        <COMPID name="ORG Censorship Monitoring Project" mc="PropertyContainer" uid="06e8442f-fbe2-4066-9bd3-89de244e20d5"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

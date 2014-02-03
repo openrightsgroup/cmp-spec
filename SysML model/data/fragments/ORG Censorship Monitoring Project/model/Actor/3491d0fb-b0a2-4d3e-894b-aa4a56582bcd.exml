@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Business employee" version="3">
+  <DEPS>
+    <ID name="Business employee" mc="Actor" uid="3491d0fb-b0a2-4d3e-894b-aa4a56582bcd"/>
+    <EXTID name="Website owner" mc="Actor" uid="5e7c97f6-6a64-4907-81e3-62937be78929"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Business employee" mc="Actor" uid="3491d0fb-b0a2-4d3e-894b-aa4a56582bcd"/>
+    <PID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Business employee]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="772d0d32-0c96-41cb-a1a6-6751653c8f23"/>
+          <PID name="Business employee" mc="Actor" uid="3491d0fb-b0a2-4d3e-894b-aa4a56582bcd"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Website owner" mc="Actor" uid="5e7c97f6-6a64-4907-81e3-62937be78929"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

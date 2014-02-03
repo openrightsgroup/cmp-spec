@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Private network user" version="3">
+  <DEPS>
+    <ID name="Private network user" mc="Actor" uid="5129b11c-3464-473e-8407-5250a4dbfa7f"/>
+    <EXTID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Private network user" mc="Actor" uid="5129b11c-3464-473e-8407-5250a4dbfa7f"/>
+    <PID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Private network user]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="a477256e-049e-4b75-98c9-fb30d0235123"/>
+          <PID name="Private network user" mc="Actor" uid="5129b11c-3464-473e-8407-5250a4dbfa7f"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

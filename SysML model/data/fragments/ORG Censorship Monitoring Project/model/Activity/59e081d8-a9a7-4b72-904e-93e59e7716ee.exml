@@ -1,0 +1,862 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Check for censorship of a URL" version="3">
+  <DEPS>
+    <ID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+    <COMPID name="Activity diagram" mc="ActivityDiagram" uid="95b48221-c5bf-41cc-afcc-3c579db1097e"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+    <PID name="Check for censorship of a URL" mc="UseCase" uid="17f4c743-2c33-4696-8180-f08f15408dfd"/>
+    <ATTRIBUTES>
+      <ATT name="IsSingleExecution">false</ATT>
+      <ATT name="IsReadOnly">false</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Check for censorship of a URL]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedGroup">
+        <OBJECT>
+          <ID name="Web surfer" mc="ActivityPartition" uid="39afc792-9ba3-41b5-ba9e-fd25a8dae6f9"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsDimension">false</ATT>
+            <ATT name="IsExternal">false</ATT>
+            <ATT name="Name"><![CDATA[Web surfer]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="ContainedNode">
+              <OBJECT>
+                <ID name="Submit a URL to check" mc="OpaqueAction" uid="a9fc8ec6-424c-4b18-95a3-fe8e0da554b9"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Submit a URL to check]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="8ed752de-c7c7-4686-a9cd-599f15fab9ee"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Fork/Join" mc="ForkJoinNode" uid="90b807da-9714-4f2a-a2f0-5d769d43f19a"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Initial Node" mc="InitialNode" uid="6369cfc8-75ba-4a77-8cc5-5950a50083b8"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Initial Node]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="4a67f932-6203-4751-bcad-e40d693e8b30"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Submit a URL to check" mc="OpaqueAction" uid="a9fc8ec6-424c-4b18-95a3-fe8e0da554b9"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Receive results" mc="AcceptSignalAction" uid="ebdfa2bd-6165-48b3-9dca-4842bd78f791"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="4a557917-7d68-4e59-bbcb-cc719372f081"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Flow Final Node" mc="FlowFinalNode" uid="1c4fa4b9-cd27-40b6-bcdc-956858df67f3"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Flow Final Node" mc="FlowFinalNode" uid="1c4fa4b9-cd27-40b6-bcdc-956858df67f3"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Flow Final Node]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="blocked.org.uk" mc="ActivityPartition" uid="a45fe484-b181-4ced-a444-1351e8f764c1"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsDimension">false</ATT>
+            <ATT name="IsExternal">false</ATT>
+            <ATT name="Name"><![CDATA[blocked.org.uk]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="ContainedNode">
+              <OBJECT>
+                <ID name="Send URL to Middleware" mc="SendSignalAction" uid="f80718f4-6f68-46fd-bcdd-bd529623036f"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Send URL to Middleware]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="2325c2f4-0bbb-4778-ab8b-687f8bb72b46"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive URL" mc="AcceptSignalAction" uid="8fe7b5ac-bdb5-4479-bc1c-8b5f89931439"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Fork/Join" mc="ForkJoinNode" uid="90b807da-9714-4f2a-a2f0-5d769d43f19a"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsCombineDuplicate">true</ATT>
+                  <ATT name="JoinSpec"><![CDATA[and]]></ATT>
+                  <ATT name="Name"><![CDATA[Fork/Join]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="1d4857fa-4f72-4970-9cbc-f550a5b02ca9"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Send URL to Middleware" mc="SendSignalAction" uid="f80718f4-6f68-46fd-bcdd-bd529623036f"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="9a97ce26-a5f1-40c5-a11a-d159b67c6423"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Display next page to web surfer" mc="OpaqueAction" uid="7807b1c1-cbf4-4626-99e4-89680efaf2d8"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Flow Final Node" mc="FlowFinalNode" uid="889c0b7d-2a87-495d-bbc1-91f66c823656"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Flow Final Node]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Display next page to web surfer" mc="OpaqueAction" uid="7807b1c1-cbf4-4626-99e4-89680efaf2d8"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Display next page to web surfer]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="e2d0498c-62b8-4d04-a652-35d726f8371a"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Flow Final Node" mc="FlowFinalNode" uid="889c0b7d-2a87-495d-bbc1-91f66c823656"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Middleware" mc="ActivityPartition" uid="85d022d5-8a17-4a81-a29b-3bde901814ab"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsDimension">false</ATT>
+            <ATT name="IsExternal">false</ATT>
+            <ATT name="Name"><![CDATA[Middleware]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="ContainedNode">
+              <OBJECT>
+                <ID name="Receive URL" mc="AcceptSignalAction" uid="8fe7b5ac-bdb5-4479-bc1c-8b5f89931439"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive URL]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="6e5e309b-9d19-4371-92e0-c47e07421068"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Queue URL for checking" mc="OpaqueAction" uid="d9c01a47-15b7-44a7-8363-cbad41ef8183"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Queue URL for checking" mc="OpaqueAction" uid="d9c01a47-15b7-44a7-8363-cbad41ef8183"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Queue URL for checking]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="f1bab24f-deb7-4459-ad2f-d1cea0ec1772"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Wait" mc="AcceptTimeEventAction" uid="582b6e8b-6cc2-42dd-a231-94543045d070"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Receive request for URL" mc="AcceptSignalAction" uid="0ab478da-de5d-4d88-a0b0-ecb7c1be83db"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive request for URL]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="079a10b7-eaea-4143-b23c-b09b6502199a"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Return next URL in queue" mc="SendSignalAction" uid="1b31d8ca-7098-4dbd-9a74-5c38ee5c4523"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Return next URL in queue" mc="SendSignalAction" uid="1b31d8ca-7098-4dbd-9a74-5c38ee5c4523"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Return next URL in queue]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="d41e00cb-1468-45b0-900c-e2e6ba5a9405"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive URL" mc="AcceptSignalAction" uid="0d360277-779c-46c8-8f02-47b44ba1709b"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Receive results" mc="AcceptSignalAction" uid="57384a89-0413-4b16-9fed-57ad64de3032"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="49a91bee-7656-4df5-a419-46a4785597fe"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Transform results" mc="OpaqueAction" uid="7a91bf03-cf08-404a-b0a9-9b24af85820f"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Transform results" mc="OpaqueAction" uid="7a91bf03-cf08-404a-b0a9-9b24af85820f"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Transform results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="ae32a5ba-070d-4a9f-b8e5-7ac82ce4d3b1"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Fork/Join" mc="ForkJoinNode" uid="62918ef4-4fc5-48d1-91ab-2b0736b2a6b8"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Send results to web surfer" mc="SendSignalAction" uid="d16301cf-416e-4bd1-a14d-beb68da2c4e1"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Send results to web surfer]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="cfdf7281-d145-4fbe-8e68-e286181fc12e"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive results" mc="AcceptSignalAction" uid="ebdfa2bd-6165-48b3-9dca-4842bd78f791"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Send results to database" mc="SendSignalAction" uid="d32f03f4-7919-4a59-a8e9-e3304f11841f"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Send results to database]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="67391ca7-65ff-41f8-9a22-ff3a3bd14430"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive results" mc="AcceptSignalAction" uid="8da12ab4-d6a6-4910-bf9b-88c9bb26d9bd"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Wait" mc="AcceptTimeEventAction" uid="582b6e8b-6cc2-42dd-a231-94543045d070"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="TimeExpresion"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Wait]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Fork/Join" mc="ForkJoinNode" uid="62918ef4-4fc5-48d1-91ab-2b0736b2a6b8"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsCombineDuplicate">true</ATT>
+                  <ATT name="JoinSpec"><![CDATA[and]]></ATT>
+                  <ATT name="Name"><![CDATA[Fork/Join]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="c60174f7-89f3-46d1-b575-bd929f914062"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Send results to web surfer" mc="SendSignalAction" uid="d16301cf-416e-4bd1-a14d-beb68da2c4e1"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="67b511fe-d442-4022-80e5-c8aa71543141"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Send results to database" mc="SendSignalAction" uid="d32f03f4-7919-4a59-a8e9-e3304f11841f"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Probe" mc="ActivityPartition" uid="6212fdc4-da5f-4d07-ae1f-66e6b021659f"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsDimension">false</ATT>
+            <ATT name="IsExternal">false</ATT>
+            <ATT name="Name"><![CDATA[Probe]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="ContainedNode">
+              <OBJECT>
+                <ID name="Request new URL to check" mc="SendSignalAction" uid="3c39f261-8306-44fb-8065-62260a610004"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Request new URL to check]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="7cb0ab51-60ae-4e99-9b15-8088b2a42fc4"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive request for URL" mc="AcceptSignalAction" uid="0ab478da-de5d-4d88-a0b0-ecb7c1be83db"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Receive URL" mc="AcceptSignalAction" uid="0d360277-779c-46c8-8f02-47b44ba1709b"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive URL]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="314c67cc-2704-46e9-b1c0-02d22d1887e9"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Check whether URL is censored" mc="OpaqueAction" uid="ee395633-9b90-47d7-a123-e691846f118a"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Check whether URL is censored" mc="OpaqueAction" uid="ee395633-9b90-47d7-a123-e691846f118a"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Check whether URL is censored]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="f73306e1-9414-4cab-8bfe-6a5bb3dc063b"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Report results" mc="SendSignalAction" uid="fc894067-46ea-4bef-ba74-03375687638d"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Report results" mc="SendSignalAction" uid="fc894067-46ea-4bef-ba74-03375687638d"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Report results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="d30c20a8-7b2f-43d6-928d-d987318b44ee"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Receive results" mc="AcceptSignalAction" uid="57384a89-0413-4b16-9fed-57ad64de3032"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Results database" mc="ActivityPartition" uid="cd4bb903-9e62-46e9-9955-e52b053ea81f"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsDimension">false</ATT>
+            <ATT name="IsExternal">false</ATT>
+            <ATT name="Name"><![CDATA[Results database]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="ContainedNode">
+              <OBJECT>
+                <ID name="Receive results" mc="AcceptSignalAction" uid="8da12ab4-d6a6-4910-bf9b-88c9bb26d9bd"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Receive results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="f02a49e6-b112-4148-b978-4042cf6f5c32"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Store results" mc="OpaqueAction" uid="30c1ba34-a91a-4696-bf6f-f6873498693a"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Store results" mc="OpaqueAction" uid="30c1ba34-a91a-4696-bf6f-f6873498693a"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Body"></ATT>
+                  <ATT name="IsMultipleInstance">false</ATT>
+                  <ATT name="IsCompensation">false</ATT>
+                  <ATT name="Name"><![CDATA[Store results]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Outgoing">
+                    <OBJECT>
+                      <ID name="ControlFlow" mc="ControlFlow" uid="28662aea-4278-4bc4-b5ad-22be6d0ac7f4"/>
+                      <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                      <ATTRIBUTES>
+                        <ATT name="Guard"></ATT>
+                        <ATT name="Weight"><![CDATA[1]]></ATT>
+                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Target">
+                          <REFOBJ>
+                            <ID name="Activity Final Node" mc="ActivityFinalNode" uid="85083b63-bd29-447e-93d4-733d1f926c33"/>
+                            <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                          </REFOBJ>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Activity Final Node" mc="ActivityFinalNode" uid="85083b63-bd29-447e-93d4-733d1f926c33"/>
+                <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Activity Final Node]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedCollaboration">
+        <OBJECT>
+          <ID name="locals" mc="Collaboration" uid="a42c38a6-c912-43ef-8281-10664c881a29"/>
+          <PID name="Check for censorship of a URL" mc="Activity" uid="59e081d8-a9a7-4b72-904e-93e59e7716ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsConcurrent">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[locals]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Activity diagram" mc="ActivityDiagram" uid="95b48221-c5bf-41cc-afcc-3c579db1097e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

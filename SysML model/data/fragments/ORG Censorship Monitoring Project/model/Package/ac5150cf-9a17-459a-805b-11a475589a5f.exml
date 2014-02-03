@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="org censorship monitoring project" version="3">
+  <DEPS>
+    <ID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+    <COMPID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <COMPID name="Check for censorship of a URL" mc="UseCase" uid="17f4c743-2c33-4696-8180-f08f15408dfd"/>
+    <COMPID name="Overview" mc="Package" uid="d5e5482a-3afd-4e2c-a008-4fc00736274e"/>
+    <COMPID name="blocked.org.uk use-cases" mc="UseCaseDiagram" uid="39948b37-98ef-46cc-9fca-931fab3b09b8"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+    <PID name="ORG Censorship Monitoring Project" mc="Project" uid="3f3193f6-552f-4d35-95ec-43cf17b1a865"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[org censorship monitoring project]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Overview" mc="Package" uid="d5e5482a-3afd-4e2c-a008-4fc00736274e"/>
+        <COMPID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+        <COMPID name="Check for censorship of a URL" mc="UseCase" uid="17f4c743-2c33-4696-8180-f08f15408dfd"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="blocked.org.uk use-cases" mc="UseCaseDiagram" uid="39948b37-98ef-46cc-9fca-931fab3b09b8"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

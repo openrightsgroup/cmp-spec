@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Overview" version="3">
+  <DEPS>
+    <ID name="Overview" mc="Package" uid="d5e5482a-3afd-4e2c-a008-4fc00736274e"/>
+    <COMPID name="API" mc="Class" uid="48bb6171-742f-4830-8b95-54ff607a50ff"/>
+    <COMPID name="Censorship Monitoring Project" mc="Class" uid="e2066340-a40d-445c-ba58-689e749ae91f"/>
+    <COMPID name="Middleware" mc="Class" uid="593d7b4f-9429-4b4a-8825-e7463df694d0"/>
+    <COMPID name="Probe" mc="Class" uid="ea53fe94-241a-447b-908e-25482a1875f6"/>
+    <COMPID name="Results database" mc="Class" uid="320fa2d1-c11d-4433-beec-ce110a0d99ca"/>
+    <COMPID name="Results transformation" mc="Class" uid="c1ab14d6-e7c3-4f4b-83c5-add43240a609"/>
+    <COMPID name="Scheduler" mc="Class" uid="07a1c5e8-4fd6-4896-9306-687accdfa93c"/>
+    <COMPID name="blocked.org.uk" mc="Class" uid="1fb9b930-da4e-4981-aded-22698067f102"/>
+    <COMPID name="overview diagram" mc="ClassDiagram" uid="95ec44c2-ea35-454d-a423-2d3cdeb8e234"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Overview" mc="Package" uid="d5e5482a-3afd-4e2c-a008-4fc00736274e"/>
+    <PID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Overview]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Censorship Monitoring Project" mc="Class" uid="e2066340-a40d-445c-ba58-689e749ae91f"/>
+        <COMPID name="blocked.org.uk" mc="Class" uid="1fb9b930-da4e-4981-aded-22698067f102"/>
+        <COMPID name="Results database" mc="Class" uid="320fa2d1-c11d-4433-beec-ce110a0d99ca"/>
+        <COMPID name="Middleware" mc="Class" uid="593d7b4f-9429-4b4a-8825-e7463df694d0"/>
+        <COMPID name="Scheduler" mc="Class" uid="07a1c5e8-4fd6-4896-9306-687accdfa93c"/>
+        <COMPID name="API" mc="Class" uid="48bb6171-742f-4830-8b95-54ff607a50ff"/>
+        <COMPID name="Results transformation" mc="Class" uid="c1ab14d6-e7c3-4f4b-83c5-add43240a609"/>
+        <COMPID name="Probe" mc="Class" uid="ea53fe94-241a-447b-908e-25482a1875f6"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="overview diagram" mc="ClassDiagram" uid="95ec44c2-ea35-454d-a423-2d3cdeb8e234"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

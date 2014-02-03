@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Public network admin" version="3">
+  <DEPS>
+    <ID name="Public network admin" mc="Actor" uid="a990abcc-5cae-488e-b09c-07e9c54d7045"/>
+    <EXTID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Public network admin" mc="Actor" uid="a990abcc-5cae-488e-b09c-07e9c54d7045"/>
+    <PID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Public network admin]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="9749495c-d0ab-4024-a47f-0de2ebb70f7b"/>
+          <PID name="Public network admin" mc="Actor" uid="a990abcc-5cae-488e-b09c-07e9c54d7045"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

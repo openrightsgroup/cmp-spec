@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="blocked.org.uk use-cases" version="3">
+  <DEPS>
+    <ID name="blocked.org.uk use-cases" mc="UseCaseDiagram" uid="39948b37-98ef-46cc-9fca-931fab3b09b8"/>
+    <FOREIGNID name="SysMLUseCaseDiagram" mc="Stereotype" uid="1a667602-d7d7-11e0-9a40-0027103f347c"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="blocked.org.uk use-cases" mc="UseCaseDiagram" uid="39948b37-98ef-46cc-9fca-931fab3b09b8"/>
+    <PID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">322</ATT>
+      <ATT name="UiData"><![CDATA[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]]></ATT>
+      <ATT name="PdeProperties"></ATT>
+      <ATT name="Name"><![CDATA[blocked.org.uk use-cases]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Extension">
+        <FOREIGNID name="SysMLUseCaseDiagram" mc="Stereotype" uid="1a667602-d7d7-11e0-9a40-0027103f347c"/>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Note" uid="a87bb7f5-398c-4509-bf32-ebb20054d2f1"/>
+          <PID name="blocked.org.uk use-cases" mc="UseCaseDiagram" uid="39948b37-98ef-46cc-9fca-931fab3b09b8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[Use Case diagrams are used to model the interactions between actors and a system.
+Use case diagrams show which actors communicate with which use cases, and the links between use cases (include, extend, ...).
+Use cases can be documented using predefined notes (pre and post conditions, description, exception). ]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

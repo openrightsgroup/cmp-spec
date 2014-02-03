@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Actors" version="3">
+  <DEPS>
+    <ID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <COMPID name="Actors Class diagram" mc="ClassDiagram" uid="b0fea68f-2801-4739-b440-7cee191dcae8"/>
+    <COMPID name="Business employee" mc="Actor" uid="3491d0fb-b0a2-4d3e-894b-aa4a56582bcd"/>
+    <COMPID name="Human blocked.org.uk visitor" mc="Actor" uid="fb41d280-5821-4126-87c9-0a91f6e8e596"/>
+    <COMPID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+    <COMPID name="ISP employee" mc="Actor" uid="3b47ed68-9927-408c-ab4e-11d131c588f5"/>
+    <COMPID name="Legal professional" mc="Actor" uid="51719333-5ca4-411e-a0a2-eff20f37d75b"/>
+    <COMPID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+    <COMPID name="Private network user" mc="Actor" uid="5129b11c-3464-473e-8407-5250a4dbfa7f"/>
+    <COMPID name="Public network admin" mc="Actor" uid="a990abcc-5cae-488e-b09c-07e9c54d7045"/>
+    <COMPID name="Public network user" mc="Actor" uid="43b72289-5a17-43f6-8e90-d72c8455e96d"/>
+    <COMPID name="Researcher" mc="Actor" uid="6db0796c-2393-4a60-a392-b82c88ffbf28"/>
+    <COMPID name="State employee" mc="Actor" uid="39c2f014-9b1f-4f14-b59a-6854be18bf58"/>
+    <COMPID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+    <COMPID name="Webmaster" mc="Actor" uid="e59bfab8-45fa-42cb-830f-76c9b7217506"/>
+    <COMPID name="Website owner" mc="Actor" uid="5e7c97f6-6a64-4907-81e3-62937be78929"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <PID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Actors]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Human blocked.org.uk visitor" mc="Actor" uid="fb41d280-5821-4126-87c9-0a91f6e8e596"/>
+        <COMPID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+        <COMPID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+        <COMPID name="Public network user" mc="Actor" uid="43b72289-5a17-43f6-8e90-d72c8455e96d"/>
+        <COMPID name="Private network user" mc="Actor" uid="5129b11c-3464-473e-8407-5250a4dbfa7f"/>
+        <COMPID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+        <COMPID name="Public network admin" mc="Actor" uid="a990abcc-5cae-488e-b09c-07e9c54d7045"/>
+        <COMPID name="Webmaster" mc="Actor" uid="e59bfab8-45fa-42cb-830f-76c9b7217506"/>
+        <COMPID name="Business employee" mc="Actor" uid="3491d0fb-b0a2-4d3e-894b-aa4a56582bcd"/>
+        <COMPID name="ISP employee" mc="Actor" uid="3b47ed68-9927-408c-ab4e-11d131c588f5"/>
+        <COMPID name="State employee" mc="Actor" uid="39c2f014-9b1f-4f14-b59a-6854be18bf58"/>
+        <COMPID name="Legal professional" mc="Actor" uid="51719333-5ca4-411e-a0a2-eff20f37d75b"/>
+        <COMPID name="Researcher" mc="Actor" uid="6db0796c-2393-4a60-a392-b82c88ffbf28"/>
+        <COMPID name="Website owner" mc="Actor" uid="5e7c97f6-6a64-4907-81e3-62937be78929"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Actors Class diagram" mc="ClassDiagram" uid="b0fea68f-2801-4739-b440-7cee191dcae8"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

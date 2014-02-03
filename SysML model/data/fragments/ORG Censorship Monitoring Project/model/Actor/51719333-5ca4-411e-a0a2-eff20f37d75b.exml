@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Legal professional" version="3">
+  <DEPS>
+    <ID name="Legal professional" mc="Actor" uid="51719333-5ca4-411e-a0a2-eff20f37d75b"/>
+    <EXTID name="Human blocked.org.uk visitor" mc="Actor" uid="fb41d280-5821-4126-87c9-0a91f6e8e596"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Legal professional" mc="Actor" uid="51719333-5ca4-411e-a0a2-eff20f37d75b"/>
+    <PID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Legal professional]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="8882c60e-e4e3-451a-8ed1-a44d362c254c"/>
+          <PID name="Legal professional" mc="Actor" uid="51719333-5ca4-411e-a0a2-eff20f37d75b"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Human blocked.org.uk visitor" mc="Actor" uid="fb41d280-5821-4126-87c9-0a91f6e8e596"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ISP Account-holder" version="3">
+  <DEPS>
+    <ID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+    <EXTID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+    <EXTID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+    <PID name="Actors" mc="Package" uid="ce376813-8bbb-4491-bcb2-86fc7f609db1"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ISP Account-holder]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="711982a8-7c87-487b-86c7-ccb499a5e35e"/>
+          <PID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Web surfer" mc="Actor" uid="8eaba640-f33d-4789-a9ef-1c6e0205359c"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="df9a9223-837a-48d0-997d-cc653c12c9ad"/>
+          <PID name="ISP Account-holder" mc="Actor" uid="6eead7cb-6208-4233-ab3d-24937eeb4510"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Network administrator" mc="Actor" uid="884aa0dd-10b5-486a-a5d3-a820e05a66ed"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

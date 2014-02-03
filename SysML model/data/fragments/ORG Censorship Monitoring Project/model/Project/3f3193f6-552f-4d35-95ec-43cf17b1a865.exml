@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ORG Censorship Monitoring Project" version="3">
+  <DEPS>
+    <ID name="ORG Censorship Monitoring Project" mc="Project" uid="3f3193f6-552f-4d35-95ec-43cf17b1a865"/>
+    <COMPID name="ORG Censorship Monitoring Project" mc="DiagramSet" uid="b07517f3-3c5e-442c-9212-69d6278692f0"/>
+    <COMPID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="ORG Censorship Monitoring Project" mc="Project" uid="3f3193f6-552f-4d35-95ec-43cf17b1a865"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[ORG Censorship Monitoring Project]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DiagramRoot">
+        <COMPID name="ORG Censorship Monitoring Project" mc="DiagramSet" uid="b07517f3-3c5e-442c-9212-69d6278692f0"/>
+      </COMP>
+      <COMP relation="Model">
+        <COMPID name="org censorship monitoring project" mc="Package" uid="ac5150cf-9a17-459a-805b-11a475589a5f"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
