@@ -21,3 +21,6 @@ Using the model
 4. Select the cmp-spec directory created in step 2 above.
 5. Double-click the new SysML model folder in the workspace window.
 
+License
+-------
+This work is released under a [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
