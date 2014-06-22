@@ -9,33 +9,69 @@ CREATE SCHEMA IF NOT EXISTS `bowdlerize` DEFAULT CHARACTER SET latin1 ;
 USE `bowdlerize` ;
 
 -- -----------------------------------------------------
--- Table `bowdlerize`.`isp_aliases`
+-- Table `bowdlerize`.`alexa_10k`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bowdlerize`.`isp_aliases` ;
+DROP TABLE IF EXISTS `bowdlerize`.`alexa_10k` ;
 
-CREATE TABLE IF NOT EXISTS `bowdlerize`.`isp_aliases` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `ispID` INT(10) UNSIGNED NULL DEFAULT NULL,
-  `alias` VARCHAR(64) NULL DEFAULT NULL,
-  `created` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `isp_aliases_alias` (`alias` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`alexa_10k` (
+  `url` VARCHAR(128) NULL DEFAULT NULL,
+  `inserted` DATETIME NULL DEFAULT NULL)
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `bowdlerize`.`isp_cache`
+-- Table `bowdlerize`.`alexa_1m`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `bowdlerize`.`isp_cache` ;
+DROP TABLE IF EXISTS `bowdlerize`.`alexa_1m` ;
 
-CREATE TABLE IF NOT EXISTS `bowdlerize`.`isp_cache` (
-  `ip` VARCHAR(16) NOT NULL,
-  `network` VARCHAR(64) NOT NULL,
-  `created` DATETIME NOT NULL,
-  PRIMARY KEY (`ip`, `network`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`alexa_1m` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `url` VARCHAR(128) NULL DEFAULT NULL,
+  `inserted` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = MyISAM
+AUTO_INCREMENT = 1727918
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`censorlist`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`censorlist` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`censorlist` (
+  `urlID` INT(11) NOT NULL AUTO_INCREMENT,
+  `md5Hash` VARCHAR(32) NOT NULL,
+  `hmac` VARCHAR(32) NULL DEFAULT NULL,
+  `confidence` INT(11) NOT NULL DEFAULT '0',
+  `inserted` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `isp` TEXT NULL DEFAULT NULL,
+  `sim` TEXT NULL DEFAULT NULL,
+  `censored` TINYINT(1) NULL DEFAULT '1',
+  PRIMARY KEY (`urlID`))
+ENGINE = MyISAM
+AUTO_INCREMENT = 7994
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`devices`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`devices` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`devices` (
+  `deviceID` VARCHAR(32) NOT NULL,
+  `gcm_regid` TEXT NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `urlsPassed` INT(11) NULL DEFAULT NULL,
+  `urlsReturned` INT(11) NULL DEFAULT NULL,
+  `enabled` TINYINT(1) NULL DEFAULT '1',
+  `delay` INT(11) NULL DEFAULT '2',
+  `lastPolled` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`deviceID`))
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -50,6 +86,43 @@ CREATE TABLE IF NOT EXISTS `bowdlerize`.`isps` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 15617
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`isp_aliases`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`isp_aliases` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`isp_aliases` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ispID` INT(10) UNSIGNED NULL DEFAULT NULL,
+  `alias` VARCHAR(64) NULL DEFAULT NULL,
+  `created` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `isp_aliases_alias` (`alias` ASC),
+  INDEX `ispID` (`ispID` ASC),
+  CONSTRAINT `isp_aliases_ibfk_1`
+    FOREIGN KEY (`ispID`)
+    REFERENCES `bowdlerize`.`isps` (`id`)
+    ON DELETE CASCADE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 25
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`isp_cache`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`isp_cache` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`isp_cache` (
+  `ip` VARCHAR(128) NOT NULL,
+  `network` VARCHAR(64) NOT NULL DEFAULT '',
+  `created` DATETIME NOT NULL,
+  PRIMARY KEY (`ip`, `network`))
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -63,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `bowdlerize`.`modx_copy` (
   `last_id` INT(10) UNSIGNED NOT NULL,
   `last_checked` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB
+ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -73,45 +146,27 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bowdlerize`.`probes` ;
 
 CREATE TABLE IF NOT EXISTS `bowdlerize`.`probes` (
-  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `uuid` VARCHAR(32) NOT NULL,
-  `userID` INT(11) UNSIGNED NULL DEFAULT NULL,
+  `userID` INT(11) NULL DEFAULT NULL,
   `publicKey` TEXT NULL DEFAULT NULL,
   `secret` VARCHAR(128) NULL DEFAULT NULL,
   `type` ENUM('raspi','android','atlas','web') NOT NULL,
   `lastSeen` DATETIME NULL DEFAULT NULL,
   `gcmRegID` TEXT NULL DEFAULT NULL,
-  `isPublic` TINYINT(1) UNSIGNED NULL DEFAULT '1',
+  `isPublic` TINYINT(1) NULL DEFAULT '1',
   `countryCode` VARCHAR(3) NULL DEFAULT NULL,
-  `probeReqSent` INT(11) UNSIGNED NULL DEFAULT '0',
-  `probeRespRecv` INT(11) UNSIGNED NULL DEFAULT '0',
-  `enabled` TINYINT(1) UNSIGNED NULL DEFAULT '1',
-  `frequency` INT(11) UNSIGNED NULL DEFAULT '2',
-  `gcmType` INT(11) UNSIGNED NULL DEFAULT '0',
+  `probeReqSent` INT(11) NULL DEFAULT '0',
+  `probeRespRecv` INT(11) NULL DEFAULT '0',
+  `enabled` TINYINT(1) NULL DEFAULT '1',
+  `frequency` INT(11) NULL DEFAULT '2',
+  `gcmType` INT(11) NULL DEFAULT '0',
   PRIMARY KEY (`uuid`, `id`),
   UNIQUE INDEX `probeUUID` (`uuid` ASC),
   INDEX `id` (`id` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bowdlerize`.`queue`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `bowdlerize`.`queue` ;
-
-CREATE TABLE IF NOT EXISTS `bowdlerize`.`queue` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `ispID` INT(10) UNSIGNED NOT NULL,
-  `urlID` INT(10) UNSIGNED NOT NULL,
-  `priority` SMALLINT(5) UNSIGNED NOT NULL DEFAULT '5',
-  `lastSent` DATETIME NULL DEFAULT NULL,
-  `results` INT(10) UNSIGNED NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `queue_unq` (`ispID` ASC, `urlID` ASC),
-  INDEX `cvr` (`ispID` ASC, `priority` ASC, `results` ASC, `lastSent` ASC, `urlID` ASC, `id` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = MyISAM
+AUTO_INCREMENT = 28
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -141,7 +196,8 @@ CREATE TABLE IF NOT EXISTS `bowdlerize`.`requests` (
   `submission_info` TEXT NULL DEFAULT NULL,
   `created` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
-ENGINE = MyISAM
+ENGINE = InnoDB
+AUTO_INCREMENT = 1701
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -160,9 +216,33 @@ CREATE TABLE IF NOT EXISTS `bowdlerize`.`results` (
   `http_status` INT(11) NULL DEFAULT NULL,
   `network_name` VARCHAR(64) NULL DEFAULT NULL,
   `created` DATETIME NULL DEFAULT NULL,
+  `filter_level` VARCHAR(16) NULL DEFAULT '',
   PRIMARY KEY (`id`),
   INDEX `result_idx` (`urlID` ASC, `network_name` ASC, `status` ASC, `created` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 1860387
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`results_baseline`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`results_baseline` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`results_baseline` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `urlID` INT(11) NOT NULL,
+  `probeID` INT(11) NOT NULL,
+  `config` INT(11) NOT NULL,
+  `ip_network` VARCHAR(16) NULL DEFAULT NULL,
+  `status` VARCHAR(8) NULL DEFAULT NULL,
+  `http_status` INT(11) NULL DEFAULT NULL,
+  `network_name` VARCHAR(64) NULL DEFAULT NULL,
+  `created` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `result_idx` (`urlID` ASC, `network_name` ASC, `status` ASC, `created` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1497362
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -172,25 +252,36 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `bowdlerize`.`tempURLs` ;
 
 CREATE TABLE IF NOT EXISTS `bowdlerize`.`tempURLs` (
-  `tempID` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tempID` INT(11) NOT NULL AUTO_INCREMENT,
   `URL` TEXT NULL DEFAULT NULL,
   `hash` VARCHAR(32) NULL DEFAULT NULL,
   `headers` TEXT NULL DEFAULT NULL,
   `content_type` TEXT NULL DEFAULT NULL,
-  `code` INT(11) UNSIGNED NULL DEFAULT NULL,
-  `fullFidelityReq` TINYINT(1) UNSIGNED NULL DEFAULT '0',
-  `urgency` INT(11) UNSIGNED NULL DEFAULT '0',
+  `code` INT(11) NULL DEFAULT NULL,
+  `fullFidelityReq` TINYINT(1) NULL DEFAULT '0',
+  `urgency` INT(11) NULL DEFAULT '0',
   `source` ENUM('social','user','canary','probe') NULL DEFAULT NULL,
-  `targetASN` INT(11) UNSIGNED NULL DEFAULT NULL,
+  `targetASN` INT(11) NULL DEFAULT NULL,
   `status` ENUM('pending','failed','ready','complete') NULL DEFAULT NULL,
   `lastPolled` DATETIME NULL DEFAULT NULL,
   `inserted` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `polledAttempts` INT(11) UNSIGNED NULL DEFAULT '0',
-  `polledSuccess` INT(11) UNSIGNED NULL DEFAULT '0',
-  PRIMARY KEY (`tempID`),
-  UNIQUE INDEX `tempurl_url` (`URL`(255) ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  `polledAttempts` INT(11) NULL DEFAULT '0',
+  `polledSuccess` INT(11) NULL DEFAULT '0',
+  PRIMARY KEY (`tempID`))
+ENGINE = MyISAM
+AUTO_INCREMENT = 1403793
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `bowdlerize`.`tmp_del_urls`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`tmp_del_urls` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`tmp_del_urls` (
+  `urlid` INT(10) UNSIGNED NOT NULL DEFAULT '0')
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -208,8 +299,10 @@ CREATE TABLE IF NOT EXISTS `bowdlerize`.`urls` (
   `polledAttempts` INT(10) UNSIGNED NULL DEFAULT '0',
   `polledSuccess` INT(10) UNSIGNED NULL DEFAULT '0',
   PRIMARY KEY (`urlID`),
-  UNIQUE INDEX `urls_url` (`URL`(767) ASC))
+  UNIQUE INDEX `urls_url` (`URL`(767) ASC),
+  INDEX `source` (`source` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 1729527
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -219,24 +312,26 @@ DEFAULT CHARACTER SET = latin1;
 DROP TABLE IF EXISTS `bowdlerize`.`users` ;
 
 CREATE TABLE IF NOT EXISTS `bowdlerize`.`users` (
-  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(128) NOT NULL,
   `password` VARCHAR(255) NULL DEFAULT NULL,
   `preference` TEXT NULL DEFAULT NULL,
   `fullName` VARCHAR(60) NULL DEFAULT NULL,
-  `isPublic` TINYINT(1) UNSIGNED NULL DEFAULT '0',
+  `isPublic` TINYINT(1) NULL DEFAULT '0',
   `countryCode` VARCHAR(3) NULL DEFAULT NULL,
   `probeHMAC` VARCHAR(32) NULL DEFAULT NULL,
-  `status` ENUM('pending','ok','suspended','banned') NULL DEFAULT 'pending',
+  `status` ENUM('pending','ok','suspended','banned') NULL DEFAULT 'ok',
   `pgpKey` TEXT NULL DEFAULT NULL,
   `yubiKey` VARCHAR(12) NULL DEFAULT NULL,
   `publicKey` TEXT NULL DEFAULT NULL,
   `secret` VARCHAR(128) NULL DEFAULT NULL,
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `administrator` TINYINT(4) NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email` (`email` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = MyISAM
+AUTO_INCREMENT = 37
+DEFAULT CHARACTER SET = latin1;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
