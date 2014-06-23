@@ -5,7 +5,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema bowdlerize
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `bowdlerize` DEFAULT CHARACTER SET latin1 ;
+-- Schema for the Blocking-Middleware database.
+DROP SCHEMA IF EXISTS `bowdlerize` ;
+CREATE SCHEMA IF NOT EXISTS `bowdlerize` DEFAULT CHARACTER SET utf8 ;
 USE `bowdlerize` ;
 
 -- -----------------------------------------------------
@@ -185,17 +187,47 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `bowdlerize`.`contacts`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `bowdlerize`.`contacts` ;
+
+CREATE TABLE IF NOT EXISTS `bowdlerize`.`contacts` (
+  `id` INT(10) NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(128) NOT NULL COMMENT 'Contact\'s email address',
+  `verified` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Set when the contact\'s email address has been verified, either by verifying a request, or by the double opt-in mechanism for the main ORG mailing list',
+  `joinlist` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Set when the contact has subscribed to ORG\'s mailing list',
+  `fullName` VARCHAR(60) NULL DEFAULT NULL COMMENT 'Contact\'s given name (so we can address messages personally)',
+  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Time this record was created',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COMMENT = 'Contains information about how to get in touch with an actor' /* comment truncated */ /* (who may have made one or more requests or be running one or more probes)*/;
+
+
+-- -----------------------------------------------------
 -- Table `bowdlerize`.`requests`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `bowdlerize`.`requests` ;
 
 CREATE TABLE IF NOT EXISTS `bowdlerize`.`requests` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT(10) NOT NULL AUTO_INCREMENT,
   `urlID` INT(11) NOT NULL,
   `userID` INT(11) NOT NULL,
+  `contactID` INT(11) NULL DEFAULT NULL COMMENT 'Record in the contacts table that stores the contact details of the actor that made this request',
   `submission_info` TEXT NULL DEFAULT NULL,
   `created` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
+  `subscribereports` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Contact wishes to receive regular email updates about this URL',
+  `allowcontact` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Contact will accept communication from ORG about this request',
+  `information` TEXT NULL COMMENT 'Extra info about this request provided by the contact',
+  PRIMARY KEY (`id`),
+  INDEX `fk_requests_contacts_idx` (`contactID` ASC),
+  CONSTRAINT `fk_requests_contacts`
+    FOREIGN KEY (`contactID`)
+    REFERENCES `bowdlerize`.`contacts` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 1701
 DEFAULT CHARACTER SET = utf8;
